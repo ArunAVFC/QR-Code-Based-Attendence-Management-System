@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Download PDF</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+  <style>
+    /* Styles for PDF content */
+    .pdf-content {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div id="data" class="pdf-content">
+    <h1>Sample Content</h1>
+    <p>This is some text in the PDF.</p>
+  </div>
+  <button onclick="generatePDF()">Download as PDF</button>
+
+  <script>
+    function generatePDF() {
+      const dataDiv = document.getElementById('data');
+      html2pdf()
+        .from(dataDiv)
+        .save('downloaded.pdf');
+    }
+  </script>
+</body>
+</html>
